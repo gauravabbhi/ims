@@ -151,7 +151,7 @@
           + "<div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-yellow-active'></span><span class='bg-yellow' style='display:block; width: 80%; float: left; height: 7px;'></span></div>"
           + "<div><span style='display:block; width: 20%; float: left; height: 20px; background: #222d32;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div>"
           + "</a>"
-          + "<p class='text-center no-margin'>Yellow</p>");
+          + "<p class='text-center no-margin'>Orange</p>");
   skins_list.append(skin_yellow);
 
   //Light sidebar skins
@@ -201,7 +201,7 @@
           + "<div><span style='display:block; width: 20%; float: left; height: 7px;' class='bg-yellow-active'></span><span class='bg-yellow' style='display:block; width: 80%; float: left; height: 7px;'></span></div>"
           + "<div><span style='display:block; width: 20%; float: left; height: 20px; background: #f9fafc;'></span><span style='display:block; width: 80%; float: left; height: 20px; background: #f4f5f7;'></span></div>"
           + "</a>"
-          + "<p class='text-center no-margin' style='font-size: 12px;'>Yellow Light</p>");
+          + "<p class='text-center no-margin' style='font-size: 12px;'>Orange Light</p>");
   skins_list.append(skin_yellow_light);
 
   demo_settings.append("<h4 class='control-sidebar-heading'>Skins</h4>");

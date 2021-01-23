@@ -7,17 +7,17 @@
     if(sidebar_collapse=='true'){
       $("body").addClass('sidebar-collapse');
     }
-  </script> 
+  </script>
   <!-- end -->
 
-<?php 
+<?php
     $CI =& get_instance();
   ?>
 <header class="main-header">
 
     <!-- Logo -->
     <a href="<?php echo $base_url; ?>dashboard" class="logo">
-      <span class="logo-mini"><b>POS</b></span>
+      <span class="logo-mini"><b>IMS</b></span>
       <span class="logo-lg"><b><?php  echo $SITE_TITLE;?></b></span>
     </a>
 
@@ -29,23 +29,23 @@
       </a>
       <div class="btn-group hidden-xs">
             <a href="#" class="btn navbar-btn btn-success dropdown-toggle "   data-toggle="dropdown" aria-expanded="false">
-                <i class="fa fa-plus"></i> 
+                <i class="fa fa-plus"></i>
             </a>
             <ul class="dropdown-menu" >
                   <?php if($CI->permissions('sales_add')) { ?>
                   <li class="border_bottom">
                     <a href="<?php echo $base_url; ?>sales/add" ><h4><i class="fa fa-plus text-green"></i> <?= $this->lang->line('sales'); ?></h4></a>
-                  </li> 
+                  </li>
                   <?php } ?>
                   <?php if($CI->permissions('purchase_add')) { ?>
                   <li class="border_bottom">
                     <a href="<?php echo $base_url; ?>purchase/add" ><h4><i class="fa fa-plus text-green"></i> <?= $this->lang->line('purchase'); ?></h4></a>
-                  </li> 
+                  </li>
                   <?php } ?>
                   <?php if($CI->permissions('customers_add')) { ?>
                   <li class="border_bottom">
                     <a href="<?php echo $base_url; ?>customers/add" ><h4><i class="fa fa-plus text-green"></i> <?= $this->lang->line('customer'); ?></h4></a>
-                  </li> 
+                  </li>
                   <?php } ?>
                   <?php if($CI->permissions('suppliers_add')) { ?>
                   <li class="border_bottom">
@@ -55,18 +55,18 @@
                   <?php if($CI->permissions('items_add')) { ?>
                   <li class="border_bottom">
                     <a href="<?php echo $base_url; ?>items/add" ><h4><i class="fa fa-plus text-green"></i> <?= $this->lang->line('item'); ?></h4></a>
-                  </li> 
+                  </li>
                   <?php } ?>
                   <?php if($CI->permissions('expense_add')) { ?>
                   <li class="border_bottom">
                     <a href="<?php echo $base_url; ?>expense/add" ><h4><i class="fa fa-plus text-green"></i> <?= $this->lang->line('expense'); ?></h4></a>
-                  </li>  
+                  </li>
                   <?php } ?>
             </ul>
         </div>
       <!-- Navbar Right Menu -->
       <div class="navbar-custom-menu">
-       
+
         <ul class="nav navbar-nav">
           <!-- <li class="text-center hidden-xs" id="">
             <form class="navbar-form navbar-left" role="search">
@@ -76,40 +76,13 @@
           </form> 
           </li> -->
           <!-- User Account Menu -->
-            
-            <li class="dropdown tasks-menu">
-            <a href="#" class="dropdown-toggle text-right" data-toggle="dropdown">
-                    <?= $this->session->userdata('language'); ?>
-            </a>
-            <ul class="dropdown-menu " style="width: auto;height: auto;">
-              <li>
-                <ul class="menu">
-                  <?php 
-                  $lang_query=$this->db->query('select * from db_languages where status=1 order by language asc');
-                  foreach ($lang_query->result() as $res) { 
-                    $selected='';
-                    if($this->session->userdata('language')==$res->language){
-                      $selected ='text-blue';
-                    }
-                    ?>
-                    <li>
-                    <a href="<?= $base_url;?>site/langauge/<?= $res->id;?>" ><h3 class='<?=$selected;?>'><?= $res->language;?></h3></a>
-                  </li>  
-                  <?php } ?>
-                </ul>
-              </li>
-            </ul>
-          </li>
-          
+
           <?php if($CI->permissions('sales_add')) { ?>
           <li class="text-center" id="">
             <a title="POS" href="<?php echo $base_url; ?>pos"><i class="fa fa-plus-square " ></i> POS </a>   
           </li>
           <?php } ?>
 
-          <li class="text-center hidden-xs" id="">
-            <a title="Dashboard" href="<?php echo $base_url; ?>dashboard"><i class="fa fa-dashboard " ></i> <?= $this->lang->line('dashboard'); ?></a>
-          </li>
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo get_profile_picture(); ?>" class="user-image" alt="User Image">
@@ -138,15 +111,12 @@
               </li>
             </ul>
           </li>
-          <li class="hidden-xs">
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
         </ul>
       </div>
 
     </nav>
   </header>
- 
+
   <!-- Left side column. contains the logo and sidebar -->
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
@@ -157,15 +127,14 @@
         </div>
         <div class="pull-left info">
           <p><?php print ucfirst($this->session->userdata('inv_username')); ?><i class="fa fa-fw fa-check-circle text-aqua"></i></p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <!--<li class="header">MAIN NAVIGATION</li>-->
 		<li class="dashboard-active-li "><a href="<?php echo $base_url; ?>dashboard"><i class="fa fa-dashboard text-aqua"></i> <span><?= $this->lang->line('dashboard'); ?></span></a></li>
-		
-		
+
+
 		<!--<li class="header">SALES</li>-->
     <?php if($CI->permissions('sales_add')  || $CI->permissions('sales_view') || $CI->permissions('sales_return_view') || $CI->permissions('sales_return_add')) { ?>
 		<li class="pos-active-li sales-list-active-li sales-active-li sales-return-active-li sales-return-list-active-li treeview">
@@ -181,7 +150,7 @@
 
 		    <li class="sales-active-li"><a href="<?php echo $base_url; ?>sales/add"><i class="fa fa-plus-square-o "></i> <span><?= $this->lang->line('new_sales'); ?></span></a></li>
         <?php } ?>
-        
+
         <?php if($CI->permissions('sales_view')) { ?>
         <li class="sales-list-active-li"><a href="<?php echo $base_url; ?>sales"><i class="fa fa-list "></i> <span><?= $this->lang->line('sales_list'); ?></span></a></li>
         <?php } ?>
@@ -220,7 +189,7 @@
          <?php } ?>
 
           </ul>
-        </li>    
+        </li>
     <?php } ?>
 
     <?php if($CI->permissions('purchase_add') || $CI->permissions('purchase_view') || $CI->permissions('purchase_return_view') || $CI->permissions('new_purchase_return')) { ?>
@@ -266,11 +235,11 @@
               <?php if($CI->permissions('import_suppliers')) { ?>
                <li class="import_suppliers-active-li"><a href="<?php echo $base_url; ?>import/suppliers"><i class="fa fa-arrow-circle-o-left "></i> <span><?= $this->lang->line('import_suppliers'); ?></span></a></li>
                <?php } ?>
-         
+
           </ul>
         </li>
         <?php } ?>
-        
+
         <?php if($CI->permissions('items_add') || $CI->permissions('items_view') || $CI->permissions('items_category_add') || $CI->permissions('items_category_view') || $CI->permissions('brand_add') || $CI->permissions('brand_view') || $CI->permissions('print_labels')) { ?>
         <li class="items-list-active-li items-active-li  category-view-active-li category-active-li brand-active-li brand-view-active-li labels-active-li import_items-active-li treeview">
           <a href="#">
@@ -336,10 +305,10 @@
           </ul>
         </li>
         <?php } ?>
-		
 
-        
-		
+
+
+
 
 		<?php if($CI->permissions('places_add') || $CI->permissions('places_view')) { ?>
 		<li class="country-active-li city-list-active-li country-list-active-li state-active-li state-list-active-li city-active-li treeview">
@@ -366,7 +335,7 @@
         </li>
     <?php } ?>
 
-   
+
 		<!--<li class="header">REPORTS</li>-->
     <?php if($CI->permissions('sales_report') || $CI->permissions('item_sales_report') || $CI->permissions('purchase_report') || $CI->permissions('purchase_return_report') || $CI->permissions('expense_report') || $CI->permissions('profit_report') || $CI->permissions('stock_report') || $CI->permissions('purchase_payments_report') || $CI->permissions('sales_payments_report') || $CI->permissions('expired_items_report')) { ?>
 		<li class="report-sales-active-li report-sales-return-active-li report-purchase-active-li report-purchase-return-active-li report-expense-active-li report-profit-loss-active-li report-stock-active-li report-purchase-payments-active-li report-sales-item-active-li report-sales-payments-active-li report-expired-items-active-li treeview">
@@ -402,9 +371,9 @@
             <?php if($CI->permissions('sales_return_report')) { ?>
             <li class="report-sales-return-active-li"><a href="<?php echo $base_url; ?>reports/sales_return" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_return_report'); ?></span></a></li>
             <?php } ?>
-            
+
             <?php if($CI->permissions('sales_payments_report')) { ?>
-            <li class="report-sales-payments-active-li"><a href="<?php echo $base_url; ?>reports/sales_payments" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_payments_report'); ?></span></a></li>  
+            <li class="report-sales-payments-active-li"><a href="<?php echo $base_url; ?>reports/sales_payments" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_payments_report'); ?></span></a></li>
             <?php } ?>
 
 
@@ -416,13 +385,13 @@
             <?php if($CI->permissions('expense_report')) { ?>
             <li class="report-expense-active-li"><a href="<?php echo $base_url; ?>reports/expense" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('expense_report'); ?></span></a></li>
             <?php } ?>
-            
-            
-            
-            
-            
+
+
+
+
+
             <?php if($CI->permissions('expired_items_report')) { ?>
-            <li class="report-expired-items-active-li"><a href="<?php echo $base_url; ?>reports/expired_items" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('expired_items_report'); ?></span></a></li>  
+            <li class="report-expired-items-active-li"><a href="<?php echo $base_url; ?>reports/expired_items" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('expired_items_report'); ?></span></a></li>
             <?php } ?>
 	       </ul>
       </li>
@@ -447,7 +416,7 @@
             <?php if($CI->permissions('roles_view')) { ?>
             <li class="roles-list-active-li role-active-li">
               <a href="<?php echo $base_url; ?>roles/view">
-                <i class="fa fa-list "></i> 
+                <i class="fa fa-list "></i>
                 <span><?= $this->lang->line('roles_list'); ?></span></a>
             </li>
             <?php } ?>
@@ -493,7 +462,7 @@
             <li class="site-settings-active-li"><a href="<?php echo $base_url; ?>site"><i class="fa fa-shield  "></i> <span><?= $this->lang->line('site_settings'); ?></span></a></li>
             <?php } ?>
 
-            
+
             <?php if($CI->permissions('tax_view')) { ?>
             <li class="tax-active-li  tax-list-active-li"><a href="<?php echo $base_url; ?>tax"><i class="fa fa-percent  "></i> <span><?= $this->lang->line('tax_list'); ?></span></a></li>
             <?php } ?>
@@ -514,7 +483,7 @@
             <?php if($CI->permissions('database_backup')) { ?>
             <li class="dbbackup-active-li"><a href="<?php echo $base_url; ?>users/dbbackup"><i class="fa fa-database "></i> <span><?= $this->lang->line('database_backup'); ?></span></a></li>
             <?php } ?>
-            
+
 		   </ul>
         </li>
         <?php } ?>

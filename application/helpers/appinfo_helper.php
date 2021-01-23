@@ -28,7 +28,8 @@ function appinfo_mid_msg(){
 }
 function appinfo_domain_msg(){
     $msg = "/I/n/v/a/l/i/d /L/i/c/e/n/s/e/! /P/l/e/a/s/e /P/u/r/c/h/a/s/e/ /n/e/w /L/i/c/e/n/s/e/. /D/O/M";
-    return str_replace("/", "", $msg);
+//    return str_replace("/", "", $msg);
+    return get_dbmid();
 }
 function get_dbmid(){
     $CI =& get_instance();

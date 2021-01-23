@@ -45,7 +45,9 @@
   var theme_skin = (typeof (Storage) !== "undefined") ? localStorage.getItem('skin') : 'skin-blue-light';
   theme_skin = (theme_skin=='' || theme_skin==null) ? 'skin-blue-light' : theme_skin;
   var sidebar_collapse = (typeof (Storage) !== "undefined") ? localStorage.getItem('collapse') : 'skin-blue-light';
+  if (localStorage.getItem('skin') === null) {
+      localStorage.setItem('skin', 'skin-yellow');
+  }
   </script>
   <!-- jQuery 2.2.3 -->
   <script src="<?php echo $theme_link; ?>plugins/jQuery/jquery-2.2.3.min.js"></script>
-  
