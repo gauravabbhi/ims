@@ -354,28 +354,11 @@
             <?php if($CI->permissions('purchase_report')) { ?>
             <li class="report-purchase-active-li"><a href="<?php echo $base_url; ?>reports/purchase" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('purchase_report'); ?></span></a></li>
             <?php } ?>
-            <?php if($CI->permissions('purchase_return_report')) { ?>
-            <li class="report-purchase-return-active-li"><a href="<?php echo $base_url; ?>reports/purchase_return" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('purchase_return_report'); ?></span></a></li>
-            <?php } ?>
 
-            <?php if($CI->permissions('purchase_payments_report')) { ?>
-            <li class="report-purchase-payments-active-li"><a href="<?php echo $base_url; ?>reports/purchase_payments" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('purchase_payments_report'); ?></span></a></li>
-            <?php } ?>
 
-            <?php if($CI->permissions('item_sales_report')) { ?>
-            <li class="report-sales-item-active-li"><a href="<?php echo $base_url; ?>reports/item_sales" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('item_sales_report'); ?></span></a></li>
-            <?php } ?>
             <?php if($CI->permissions('sales_report')) { ?>
             <li class="report-sales-active-li"><a href="<?php echo $base_url; ?>reports/sales" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_report'); ?></span></a></li>
             <?php } ?>
-            <?php if($CI->permissions('sales_return_report')) { ?>
-            <li class="report-sales-return-active-li"><a href="<?php echo $base_url; ?>reports/sales_return" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_return_report'); ?></span></a></li>
-            <?php } ?>
-
-            <?php if($CI->permissions('sales_payments_report')) { ?>
-            <li class="report-sales-payments-active-li"><a href="<?php echo $base_url; ?>reports/sales_payments" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('sales_payments_report'); ?></span></a></li>
-            <?php } ?>
-
 
             <?php if($CI->permissions('stock_report')) { ?>
             <li class="report-stock-active-li"><a href="<?php echo $base_url; ?>reports/stock" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('stock_report'); ?></span>
@@ -386,13 +369,6 @@
             <li class="report-expense-active-li"><a href="<?php echo $base_url; ?>reports/expense" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('expense_report'); ?></span></a></li>
             <?php } ?>
 
-
-
-
-
-            <?php if($CI->permissions('expired_items_report')) { ?>
-            <li class="report-expired-items-active-li"><a href="<?php echo $base_url; ?>reports/expired_items" ><i class="fa fa-files-o "></i> <span><?= $this->lang->line('expired_items_report'); ?></span></a></li>
-            <?php } ?>
 	       </ul>
       </li>
       <?php } ?>
@@ -419,28 +395,6 @@
                 <i class="fa fa-list "></i>
                 <span><?= $this->lang->line('roles_list'); ?></span></a>
             </li>
-            <?php } ?>
-          </ul>
-        </li>
-        <?php } ?>
-    <!-- SMS -->
-     <?php if($CI->permissions('send_sms') || $CI->permissions('sms_template_view') || $CI->permissions('sms_api_view')) { ?>
-     <li class="sms-active-li sms-api-active-li sms-template-active-li sms-templates-list-active-li treeview">
-          <a href="#">
-            <i class="fa fa-envelope text-aqua"></i> <span><?= $this->lang->line('sms'); ?></span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <?php if($CI->permissions('send_sms')) { ?>
-            <li class="sms-active-li"><a href="<?php echo $base_url; ?>sms"><i class="fa fa-envelope-o "></i> <span><?= $this->lang->line('send_sms'); ?></span></a></li>
-            <?php } ?>
-            <?php if($CI->permissions('sms_template_view')) { ?>
-            <li class="sms-templates-list-active-li sms-template-active-li"><a href="<?php echo $base_url; ?>templates/sms"><i class="fa fa-list "></i> <span><?= $this->lang->line('sms_templates'); ?></span></a></li>
-            <?php } ?>
-            <?php if($CI->permissions('sms_api_view')) { ?>
-            <li class="sms-api-active-li"><a href="<?php echo $base_url; ?>sms/api"><i class="fa fa-cube "></i> <span><?= $this->lang->line('sms_api'); ?></span></a></li>
             <?php } ?>
           </ul>
         </li>
