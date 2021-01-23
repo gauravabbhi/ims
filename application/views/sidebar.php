@@ -478,16 +478,9 @@
             <li class="currency-view-active-li currency-active-li"><a href="<?php echo $base_url; ?>currency/view"><i class="fa fa-gg "></i> <span><?= $this->lang->line('currency_list'); ?></span></a></li>
             <?php } ?>
             <li class="change-pass-active-li"><a href="<?php echo $base_url; ?>users/password_reset"><i class="fa fa-lock "></i> <span><?= $this->lang->line('change_password'); ?></span></a></li>
-
-
-            <?php if($CI->permissions('database_backup')) { ?>
-            <li class="dbbackup-active-li"><a href="<?php echo $base_url; ?>users/dbbackup"><i class="fa fa-database "></i> <span><?= $this->lang->line('database_backup'); ?></span></a></li>
-            <?php } ?>
-
 		   </ul>
         </li>
         <?php } ?>
-        <li><a href="<?php echo $base_url; ?>help/" target="_blank"  ><i class="fa fa-book "></i> <span><?= $this->lang->line('help'); ?></span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->
