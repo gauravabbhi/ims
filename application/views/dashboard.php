@@ -418,7 +418,7 @@
              <div class="box box-primary">
                 <!-- /.box-header -->
                 <div class="box-body ">
-                   <div id="bar_container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto"></div>
+                   <div id="bar_container" style="min-width: 310px; height: 400px; max-width: 600px; margin: 0 auto;display:none!important;"></div>
                 </div>
                 <!-- /.box-body -->
              </div>
