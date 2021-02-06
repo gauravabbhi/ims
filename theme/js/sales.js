@@ -112,8 +112,7 @@ $('#save,#update').click(function (e) {
 					}
 					else
 					{
-						// alert(result);
-                        location.href=base_url+"sales/invoice/"+result[1];
+						alert(result);
 					}
 					$("#"+this_id).attr('disabled',false);  //Enable Save or Update button
 					$(".overlay").remove();
@@ -123,6 +122,15 @@ $('#save,#update').click(function (e) {
 		//}
   
 });
+// 'hostname' => 'localhost',
+//     'username' => 'forge',
+//     'password' => 'ApGod5lf3p99rEJZTtdc',
+//     'database' => 'ims',
+//     'dbdriver' => 'mysqli',
+//     'dbprefix' => '',
+//     'pconnect' => FALSE,
+//     'db_debug' => (ENVIRONMENT !== 'production'),
+
 
 
 $("#item_search").bind("paste", function(e){
