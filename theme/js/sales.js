@@ -112,7 +112,8 @@ $('#save,#update').click(function (e) {
 					}
 					else
 					{
-						alert(result);
+						// alert(result);
+                        location.href=base_url+"sales/invoice/"+result[1];
 					}
 					$("#"+this_id).attr('disabled',false);  //Enable Save or Update button
 					$(".overlay").remove();
